@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--JS-->
+    <script>
+        //Programa que nos muestra todos los números entre '2' que introduce el usuario
+        do {
+            var num1 = Number(prompt("Introduce el primer número: "));
+            var num2 = Number(prompt("Introduce el segundo número: "));
+
+        } while (isNaN(num1) || isNaN(num2));
+
+
+        //Si num1 es menor
+        if (num1 < num2) {
+            document.write("<h2>Del número '" + num1 + "' al número '" + num2 + "': </h2>");
+            for (let i = num1 + 1; i < num2; i++) {
+                document.write(i + "<br/>");
+            }
+            //Si num2 es el menor
+        } else {
+            document.write("<h2>Del número '" + num2 + "' al número '" + num1 + "': </h2>");
+            for (let i = num2 + 1; i < num1; i++) {
+                document.write(i + "<br />");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

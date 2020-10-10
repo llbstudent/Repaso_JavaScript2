@@ -1,0 +1,241 @@
+//------------------------------------------------
+// FUNCIONES
+//-----------------------------------------------
+1- Sin parámetros
+2- Con parámetros
+3- Con parámetros opcionales
+4- Parámetros Rest y Spread
+5- Anónima
+6- CALL-BACK: Pasar funciones por parámetro para poder usarlas dentro de otras
+7- Funciones con flecha
+8- Funciones útiles para texto
+   8.1-  métodos para transformar String/Cadenas
+   8.2- Búsqueda en String/Cadenas
+   8.3- Reemplazar y separar Strings/Cadenas
+   8.4- Plantillas de Strings/Cadenas
+
+Las funciones/métodos son intrucciones lógicas organizadas en bloque.
+Se pueden invocar más de una vez/reutilizarlas tantas veces cómo quiera/se necesite. Estructura:
+
+function nombre_Funcion(){
+    //Código a ejecutar
+}
+
+Las invocaremos así:
+nombre_Funcion();
+
+
+==============================
+1- Sin parámetros
+==============================
+//Ejemplo:
+<script>
+    function dia_de_hoy(){
+        vay hoy = new Date();
+        document.write(hoy.toDateString());
+    }
+
+    dia_de_hoy();
+</script>
+
+
+==============================
+2- Con parámetros
+==============================
+//Ejemplo:
+
+function suma(num1, num2){
+    var res = num1 + num2;
+    return res;
+}
+
+suma(5, 7);
+
+
+==============================
+3- Con parámetros opcionales
+==============================
+//Ejemplo:
+
+function calculadora(num1, num2 = 2){
+    return num1 + num2;
+}
+
+==============================
+4- Parámetros Rest y Spread:
+==============================
+Es un parámetro al que se le añaden tres puntos suspensivos delante de este (Ej: ...RestoDeFrutas)
+Esto hace que 'agrupe' los parámetros restantes
+
+function listadoFrutas(fruta1, ...fruta2){
+    console.log(fruta1);    //Melón
+    console.log(fruta2);    //Plátano, Moras, Kiwi...
+}
+
+listadoFrutas("Melón", "Plátano", "Moras", "Kiwi", "Fresa")
+
+
+==============================
+5- Anónima:
+==============================
+Son funciones que no tienen nombre. Ej:
+
+var pelicula = function(nombrePeli){
+    return "La película es: " + nombrePeli;
+}
+
+//Llamada:
+pelicula("El silencio de los corderos");
+
+
+==============================
+6- CALL-BACK: 
+Pasar funciones por parámetro para poder usarlas dentro de otras
+==============================
+
+function sumar(num1, num2, resultMuestra, resultPorDos){
+    var result = num1 + num2;
+
+    resultMuestra(result);
+    resultPorDos(result);
+    return result;
+}
+
+sumar(5, 5, 
+    function(dato){
+        console.log("La suma es " + dato);
+
+    }, function(dato){
+        console.log("La suma por 2 es: " + dato);
+    }
+);
+
+==============================
+7- Funciones con flecha
+==============================
+Son parecidas a las anonimas.
+Sólo se sustituye la palabra 'function' por la flecha '=>'
+
+
+
+==============================
+8- Funciones útiles para texto
+==============================
+
+-------------------------------------------------
+8.1- Métodos para transformar String/Cadenas
+-------------------------------------------------
+
+-Transformar número a String:
+    var numero = 444;
+    numero.toString();
+
+-Transformar a mayús:
+    var texto = "Hola";
+    texto.toUpperCase();
+
+-Transformar a mnúsc:
+    var texto = "Hola";
+    texto.toLowerCase();
+
+-Longitud del texto:
+    texto.length;
+
+-Concatenar texto:
+    texto1.concat(" " + texto2);
+
+
+-------------------------------------------------
+8.2- Búsqueda en String/Cadenas
+-------------------------------------------------
+
+-indexOf(): Encuentra la posición y si existe la palabra:
+    var frase = "Hola me llamo Laura, no me gusta el morado";
+    var busqueda = frase.indexOf("morado");
+    console.log(busqueda);
+
+-lastIndexOf: Encuentra la última coincidencia:
+    var busqueda = frase.lastIndexOf("morado");
+    console.log(busqueda);
+
+* Cuando nos imprime por pantalla '-1' es que el resultado no existe
+
+
+-includes(): Te devuelve si una cadena está dentro de otra, mediante true o false.EJ:
+    var cadena = "Esto es una prueba, para ver si prueba está dentro de la cadena.";
+    var incluida = cadena.includes("prueba");
+
+
+-match(): Te devuelve todas las ocurrencias que haya dentro de una cadena 
+teniendo en cuenta una expresión regular (regex). EJ:
+    var cadena = "Esto es una prueba, para ver si prueba está dentro de la cadena.";
+    var expresion = /prueba/gi;
+    var coincidencias = cadena.match(expresion);
+
+
+-charAt(): Devuelve en un nuevo 'String' el carácter  UTF-16 de una cadena. EJ:
+    var cadena = "Hola que tal!";
+    cadena.charAt(4);
+
+
+-startsWith(): busca la palabra/-s con la que empieza una cadena. EJ:
+    var str = "Hello world, welcome to the universe.";
+    var n = str.startsWith("Hello");
+
+
+-------------------------------------------------
+8.3- Reemplazar y separar Strings/Cadenas
+-------------------------------------------------
+//Separar Cadenas/Strings
+
+-subString(): Nos devuelve un subconjunto de un objeto 'String'. EJ:
+    var cadena = "Me gusta el juego de TWEWY"
+    cadena.substring(10, 15)
+
+
+-replace(): Devuelve una nueva cadena con algunas o todas las coincidencias de un patrón, 
+siendo cada una de estas coincidencias reemplazadas.
+SINTAX: cadena.replace(regexp|substr, newSubStr|function[lags]);
+
+EJ:
+    const text1 = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+    const regex = /dog/gi;
+
+    console.log(text1.replace(regex, 'ferret'));
+    // expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+
+
+-slice(): Devuelve una copia de una parte del array.
+SINTAX: cadena.slice(indiceDondeQueremosEmpezarAIncluir, ElementoFinalQueNoIncluiremos);
+
+EJ: 
+    var nombres = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+    var masculinos = nombres.slice(1, 3);
+
+    // masculinos contiene ['Pedro','Miguel']
+
+
+-split(): Divide un objeto de tipo String en un array (vector) de cadenas
+SINTAX: cadena.split([separador][,limite])
+EJ:
+    var miCadena = "Hola Mundo. Cómo estás hoy?";
+    var divisiones = miCadena.split(" ");       // Array Completo
+    var divisiones = miCadena.split(" ", 3);    // Sólo 3 palabras
+    
+
+-trim(): Elimina los espacios en blanco en ambos extremos del string.
+SINTAX: cadena.trim();
+
+
+
+
+
+
+-------------------------------------------------
+8.4- Plantillas de Strings/Cadenas:
+-------------------------------------------------
+var texto = `
+<h1>Hola qué tal</h1>
+<h3>Mi nombre es ${nombre}</h3>
+<h3>Mis apellidos son ${apellidos}</h3>
+`;

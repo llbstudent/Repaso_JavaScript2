@@ -1,0 +1,129 @@
+//------------------------------------------------
+// JQUERY
+//-----------------------------------------------
+Un librería es un archivo, en este caso de extensión '.js'.
+Una archivo que ha creado un programador o comunidad de programadores que principalmente 
+contiene funciones, que solventa y realiza las tareas más frecuentes.
+
+Existen otras como: Propotype, Moontools, Dojo, Yahoo User Interface
+
+Es una librería de Js que nos ayuda en la creación de tareas frecuentes, como por ejenmplo:
+-Seleccionar elementos
+-Agregar nuevo contenido
+-Ocultar y Mostrar elementos de una web
+-Validación de formularios
+-Efectos visuales vistosos
+
+
+//-------
+CARACTERÍSTICAS
+//-------
+-Es pequeña y ligera. (100Kb)
+-CSS 'friendly'
+-Ampliamente testeada
+-Gran comunidad de soporte
+-Numerosos plugins que realizan las tareas más frecuentes
+
+//-------
+Aregar JQuery
+//-------
+Hay principalmente 2 formas:
+-1: La puedes enlazar desde los servidores de 'google', 'Microsoft'...
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+-2: Te puedes descargar tu propia copia de JQUERY
+
+
+//-------
+LOOPS automáticos
+//-------
+ejemplo en: Ejercicio/Fotografias.Ej_JQUERY.html
+
+//-------
+Texto. Agregando contenido
+//-------
+ejemplo en: Ejercicio/Errores_AgregandoContenido.Ej_JQUERY.html
+
+//-------
+Reemplazar y Agregar elementos
+//-------
+ejemplo en: Ejercicio/AgregarElementos.Ej_JQUERY.html
+
+//-------
+Atributos CSS
+//-------
+ejemplo en: Ejercicio/JQUERY_AtributosCSS.Ej_JQUERY.html
+Ejercicio/JQUERY_ModificandoAtriutos_CSS
+
+//-------
+Atributos HTML
+//-------
+ejemplo en: Ejercicio/JQUERY_cambiando_atributos_html.html
+
+//-------
+EACH: función. 
+//-------
+$(This) -> Hace referencia a 'este'/'objeto'
+ejemplo en: Ejercicio/JQUERY_EACH
+
+//-------
+EVENTOS 
+//-------
+Un evento es un desencadenante de la acción.
+Los eventos son lo hacen se que produzca una interacción con el usuario. Pueden haber de varios tipos:
+-de ratón (click, mouseOut, mouseMove)
+-teclado (keyPress, keyDown) 
+-de formulario (submit, reset, focus, blur...) 
+-de documento o ventana (load, resize, scroll)...
+
+//Funciones normales:
+Sintax (Todas las imagenes apuntan a esta función):
+$("img).click(función_a_ejecutar);
+
+//Funciones anónimas:
+$("img").click(function(){
+    //Lo que haga
+});
+
+
+ejemplo en: Ejercicio/JQUERY_ejemplo_eventos.html
+
+//-------
+EVENTOS 'hover()', 'toggle()', 'next()', 'bind()'
+//-------
+ejemplo en: Ejercicio/JQUERY_Eventos_hover.html
+Ejercicio/JQUERY_Eventos_toggle.html
+Ejercicio/JQUERY_Eventos_next.html
+Ejercicio/JQUERY_Eventos_bind.html
+
+
+//-------
+EFECTOS Y ANIMACIONES
+//-------
+Mostrar/Ocultar: show(), hide(), toggle()
+Aparecer/Desvanecer: FadeIn(), FadeOut(), fadeToggle(), FadeTo()
+Deslizamiento: SlideDown(), SlideUp(), SlideToggle()
+//----------
+Ejemlos: Ejercicio/JQUERY_ANIMACIONES/JQUERY_Animaciones_Toggle.html
+
+//-------
+Funcion animate():
+//-------
+Esta función nos permite animar cualquier objeto/etiqueta que tengamos en nuestra página.
+Es necesario conocer CSS (por los valores numéricos que vamos a usar: margin, margin-left, height, opacity...)
+
+Ejemplos:
+Ejercicio/JQUERY_ANIMACIONES/JQUERY_Animaciones_Animate_I.html
+Ejercicio/JQUERY_ANIMACIONES/JQUERY_Animaciones_Animate_II.html
+
+// Con funciones anidadas:
+Ejemplo: Ejercicio/JQUERY_ANIMACIONES/JQUERY_Animaciones_FuncionesAnonimas_Anidadas.html
+
+//-------
+Plugins:
+//-------
+Es como otra librería interna de JQUERY, se pueden descargar de forma adicional 
+Y hará que teng aefectos más vistosos
+Google.es/búsqueda: 'JQUERY plugins'
+
+Ejemplo: Ejercicio/JQUERY_ANIMACIONES/JQUERY_Animaciones_PLUGINS.html

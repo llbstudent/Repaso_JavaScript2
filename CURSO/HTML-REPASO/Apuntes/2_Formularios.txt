@@ -1,0 +1,46 @@
+//Formularios
+Se utilizan esencalmente para enviar información al servidor.
+
+ej:
+    <form action="" method="post">
+        <!--Los campos:-->
+        <p>
+            <label for="nombre"></label>
+            <input type="text" name="nombre" placeholder="Escribe tu nombre"/>
+        </p>
+
+        <p>
+            <textarea name="descripcion"></textarea>
+        </p>
+
+        <p>
+            <input type="radio" name="genero" value="Hombre"> Hombre
+            <br/>
+            <input type="radio" name="genero" value="Mujer"> Mujer
+        </p>
+
+        <p>
+            <select>
+                <option>Estudiante</option>
+                <option>Trabajador</option>
+                <option>Desempleado</option>
+            </select>
+        </p>
+
+        <input type="submit" />
+        
+
+        
+    </form>
+
+
+//Etiqueta '<form>'
+Tiene los siguientes atributos:
+action: Adonde va esta información
+method: Cómo va esa información-->
+
+//Etiqueta '<label>':
+Sirven para darle el nombre al campo 'visualmente'
+
+//Etiqueta '<input>':
+Para introducir datos, los hay de varios tipos: password, number...

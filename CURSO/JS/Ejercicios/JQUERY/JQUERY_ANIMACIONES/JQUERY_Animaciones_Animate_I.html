@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Documento sin título</title>
+
+    <!--CSS-->
+    <style>
+        img {
+            opacity: 0.5;
+        }
+    </style>
+    <!--JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //Primera anim
+            let imgChica = $("#imagen");
+
+            imgChica.click(function() {
+                //this = #imagen
+                $(this).animate({
+                    marginLeft: "+=50px"
+                }, 500);
+            });
+
+            //Segunda anim 'mouseOver'
+            imgChica.mouseover(function() {
+                $(this).animate({
+                    opacity: 1
+                }, 250);
+            });
+
+            //Segunda anim 'mouseOut'
+            imgChica.mouseout(function() {
+                $(this).animate({
+                    opacity: 0.5
+                }, 250);
+            });
+
+        });
+    </script>
+</head>
+
+<!--HTML-->
+
+<body>
+    <img src="imgs/1.jpg" width="300" height="200" id="imagen">
+
+</body>
+
+</html>

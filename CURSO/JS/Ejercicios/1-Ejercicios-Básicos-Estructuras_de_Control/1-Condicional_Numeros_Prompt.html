@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional números</title>
+    <script>
+        //Con 'let' da un resultado diferente la ejecución del bucle
+        /*
+        while ((num1 <= 0 || num2 <=0) || (isNaN(num1) || isNaN(num2))) { 
+            var num1 = Number(prompt("Escriba el primer número:")); 
+            var num2 = Number(prompt("Escriba el segundo número:")); 
+        }                
+    */
+        do {
+            var num1 = Number(prompt("Escriba el primer número:"));
+            var num2 = Number(prompt("Escriba el segundo número:"));
+
+        } while ((num1 <= 0 || num2 <= 0) || (isNaN(num1) || isNaN(num2))); //NaN: Not a Number
+
+
+
+
+
+        //Comparación
+
+        if (num1 > num2) {
+            document.write("El primer número '" + num1 + "' es mayor que el segundo número '" + num2 + "'");
+
+        } else if (num1 > num2) {
+            document.write("El primer número '" + num1 + "' es menor que el segundo número '" + num2 + "'");
+        } else {
+            document.write("El primer número '" + num1 + "' y el segundo número '" + num2 + "' son iguales");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

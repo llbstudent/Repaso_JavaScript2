@@ -1,0 +1,8 @@
+//------------------------------------------------
+        EL JSON
+//------------------------------------------------
+es la anotación de objetos de JS
+JavaScript Object Notation
+
+ Hay una extensión para tu navegador que es JSON-View para que puedas ver mejor
+ los docuemtnos JSON

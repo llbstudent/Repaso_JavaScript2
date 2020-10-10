@@ -1,0 +1,32 @@
+//------------------------------------------------
+// EVENTOS
+//-----------------------------------------------
+
+Son sucesos que ocurren en la página cuando el usuario realiza alguna acción. 
+Se suelen capturar
+
+Tipos de eventos:
+
+ onClick: Pinchar y soltar el ratón.
+ ondbClicl: Cickear 2 veces el ratón
+ onMouseDown: Pulsar (sin soltar) un botón del ratón
+ onMouseMove: Mover el ratón
+ onReset: Inicializa/Resetea un formulario
+ onBlur: Deseleccionar elemento
+ onChange: Deseleccionar un elemento que se ha modificado
+ onKeyDown: Pulsar una tecla (Sin soltar)
+ onFocus: Seleccionar un elemento
+ onKeyPress: Pulsar una tecla
+ onKeyUp: Soltar una tecla pulsada
+ onLoad: La página s eha cargado completamente
+
+ Elemetos/Etiquetas sobre los que se pueden usar: button, input, label, body, textarea...
+
+ EJEMPLO:
+ //HTML
+ <img src="" width="420 height="290" onClick="aviso">
+
+ //JS
+ function aviso(){
+     alert("Soy un ejemplo de evento);
+ }

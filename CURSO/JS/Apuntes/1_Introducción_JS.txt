@@ -1,0 +1,173 @@
+//----------------------------------------------------------
+// JAVASCRIPT Es un lenguaje interpretado (No compilado)
+//----------------------------------------------------------
+Se ejecuta en local: dentro de un navegador/Desde una carpeta de tu ordenador
+//Agrega interactividad a los sitios web
+
+//El código de JS puede ir en el html dentro de las etiquetas. Ej: <script></script>
+// Pero lo suyo es que este en un archivo externo. Ej:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		//Mi codigo JS
+	</script>
+	<!--En un archivo externo escribiremos la ruta:-->
+	<script src="JavaScriptEj1.js"></script>
+</head>
+<body>
+	<script>
+		//Mi codigo JS
+	</script>
+</body>
+</html>
+
+//=======================================================
+// 1.1 Básico: Imprimir texto Y Comentarios
+//=======================================================
+Imprimir texto
+---------------
+-alert("Hola Mundo"): A través de una ventana de alerta.
+
+-document.write("Hola Mundo"): Te imprime dentro de la página 
+
+-console.log("Hola Mundo"): Te imprime en la consola del navegador
+
+---------------
+Comentarios:
+---------------
+
+- // : Comentario simple
+
+- /*
+	Esto sería un comentario multilínea
+*/
+
+
+//============================
+// 1.2 Las Variables
+//============================
+Las variables son contenedores de información, en JS
+
+var country = "Spain";
+var continent = "Europe";
+
+-Concatenar variables:
+var country_Continent = country + ' belongs to ' + continent;
+console.log(country + ' belongs to ' + continent );
+console.log(country_Continent);
+
+
+---------------
+El 'use strict':
+---------------
+Este modo nos sirve para que nuestro código JS se adecúe más a los estándares del momento y use mejores prácticas.
+Se pone la sentencia al inicio del código/En la primera línea con comillas simples: 
+'use strict'
+
+//============================
+// Para imprimir por consola
+//============================
+-Para visualizar la consola dentro de nuestro navegador, vamos a:
+	Herramientas para desarrollador -> Console
+
+-Para imprimir por consola:
+	console.log("Hola me llamo Laura");
+
+var nombre = "Laura";
+console.log("Encantado de saludarte " + nombre);
+console.log(typeof(nombre));
+
+//============================
+función alert(): Para crear ventanas con alerta. Ej:
+
+<script>
+	alert("Error, no se pudo cargar la página");
+</script>
+
+
+usamos el método 'alert' sin el objeto delante, porque este método pertenece a un objeto
+que está siempre presente 'window'. Ej: windfow.alert();
+Así que podemos obviar poner al objeto 'window' delante.
+
+//============================
+document: Es el objeto documento (documento web).
+Tiene opciones que son: métodos y propiedades. Ej:
+
+//HTML
+<input type="button" id="botonAceptar" />
+
+//JS
+var miBoton = document.getElementById("botonAceptar");
+miBoton.style.width = "250px";
+
+
+//============================
+// Tipos dde variables en JSES6
+//============================
+en ES6 tenemos tres tipos de variables: var, let y const.
+let y const son dos formas de declarar variables en JS introducidas en ES6 que reducen el ámbito de la variable a bloques.
+Var y let permiten definir variables mutables.
+---------------
+Diferencia Let y Var (Y CONST)
+---------------
+-LET: Límita su alcance al bloque.
+
+-VAR: Define variables globales/Locales sin importar el ámbito
+
+-CONST: Su valor NUNCA puede variar
+
+//--------
+//VAR
+//--------
+Var se utiliza para declarar una variable y adicionalmente 
+se puede inicializar el valor de esta variable.
+Permite crear variables con alcance a su función más cercana y se expande a nivel de esta. EJ:
+
+function explainVar(){
+	var a = 10;
+	console.log(a);  // output 10
+
+	if(true){
+		var a = 20;
+		console.log(a); // output 20
+	}
+
+	console.log(a);  // output 20
+}
+
+//Dentro de la función 'mensaje' actúa más globalmente
+function explainVar2(){
+	for(let i=0; i < 10; i++){
+		var mensaje = "Bucle finalizado";
+		console.log(i);
+	}
+
+	console.log(mensaje);
+}
+
+//--------
+//LET
+//--------
+Es más específico que var. Son variables que necesitan tener siempre un valor definido.
+Se restringe más su alcance que 'var'.  Tiene el alcance de una variable 'como en Java'
+Es decir, se expanden a nivel estructural. Ej:
+
+function explainVar2(){
+	for(let i=0; i < 10; i++){
+		let mensaje = "Bucle finalizado";
+		console.log(i);
+	}
+	console.log(mensaje); //¡AQUÍ NOS DARÍA UN ERROR!
+}
+
+
+//--------
+//CONST
+//--------
+Const es igual que let, con una pequeña gran diferencia: no puedes re-asignar su valor.
+son constantes/Tienen siempre el mismo valor
+
+

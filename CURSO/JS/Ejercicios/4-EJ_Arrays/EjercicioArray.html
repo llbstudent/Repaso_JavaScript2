@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Array</title>
+</head>
+
+<body>
+    <h1>Ejercicios con arrays</h1>
+    <!--Mis pruebas JS-->
+    <script>
+        /*
+                                                                                1ej. Pedir 6 números por pantalla y que los muestre en un array
+                                                                                2ej. Mostrar todos los elementos del array por pantalla y por consola
+                                                                                3ej. Ordenar Array y mostrarlo de nuevo
+                                                                                4ej. Invertir su orden y mostrarlo
+                                                                                5ej. Mostrar cuantos elementos tiene el Array
+                                                                                6ej. Búsqueda de un valor introducido por el usuario (indice incluído)        
+                                                                                */
+
+        //1ej
+        let numArray = new Array(6);
+        rellenarArray(numArray);
+
+        //2ej
+        mostrarArrayConsola(numArray);
+        mostrarArrayPagina(numArray);
+
+        //3ej
+        mostrarArrayConsola(numArray.sort((a, b) => a - b));
+        mostrarArrayPagina(numArray.sort((a, b) => a - b), "ordenado");
+
+        //4ej
+        mostrarArrayConsola(numArray.sort().reverse());
+        mostrarArrayPagina(numArray.sort().reverse(), "inverso");
+
+        //5ej
+        document.write("El array tiene " + numArray.length + " elementos");
+
+        //6ej
+        encontrarElemento(numArray);
+
+        //Métodos
+        //Nos rellenará un array con 6 números
+        function rellenarArray(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                let esEntero = true;
+                do {
+                    let num = prompt("Posición " + i + " :");
+                    esEntero = esNumEntero(num);
+
+                    if (esEntero) {
+                        arr[i] = parseInt(num);
+                    }
+                } while (!esEntero);
+            }
+        }
+
+        //Nos comprueba si es un número entero
+        function esNumEntero(value) {
+            if (value % 1 === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //Se nos muestra el listado en la página principal
+        function mostrarArrayPagina(arr, nombreLista = "original") {
+            document.write("<br/>");
+            document.write("<h3>Lista " + nombreLista + "</h3>");
+            document.write("<ul>");
+            for (let i = 0; i < arr.length; i++) {
+                document.write("<li>" + arr[i] + "</li>");
+            }
+            document.write("</ul>");
+        }
+
+
+        //Nos lo muestra por consola
+        function mostrarArrayConsola(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+        }
+
+        //Búsqueda
+        function encontrarElemento(arr) {
+            let esEntero = true;
+            let numEncontrar;
+            do {
+                if (esEntero) {
+                    numEncontrar = prompt("Introduce el número a buscar :");
+
+                } else {
+                    numEncontrar = prompt("Por favor, introduce un número a buscar :");
+                }
+                esEntero = esNumEntero(numEncontrar);
+            } while (!esEntero);
+
+            //Busca si existe
+            let busquedaNumero = arr.find(function(numero) {
+                return numero == numEncontrar;
+            });
+
+            //Busca la posición si encuentra el número previamente
+            if (busquedaNumero) {
+                document.write("<br />El número '" + numEncontrar + "' se encuentra en la posición " +
+                    (arr.findIndex(elem => elem == numEncontrar) + 1));
+
+            } else {
+                document.write("<br />El número '" + numEncontrar + "' no se encuentra en el array");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+------------------------------------------
+AJAX. PETICIONES ASÍNCRONAS Y PROMESAS
+------------------------------------------
+DEFINICIONES:
+--------------
+JSON: JAvaScript Object Notation
+JasonView
+
+--------------
+API-REST: Es un servicio/BackEnd que nos devuelve datos en JSON.
+Puede recibir peticiones(por POST, PUT, GET, DELETE - PROTOCOLO http)
+
+--------------
+AJAX: AJAX significa JavaScript asíncrono y XML.
+Es un conjunto de técnicas de desarrollo web que permiten que las aplicaciones web funcionen de forma asíncrona, 
+procesando cualquier solicitud al servidor en segundo plano.
+Las peticiones básicas se hacían con JQUERY
+Una petición AJAX es básicamente un servicio 'RES' (API-Res) o 
+a un backEnd que nos devuelve un resultado y nosostros podemos hacer con ese resultado lo que queramos
+
+
+--------------
+FETCH: es un método(AJAX) que nos permite hacer peticiones ajax de una amenra mucho más simple 
+que como se hacían en JS clásico.
+Es un sustituto del AJAX
+Lo usaremos para hacer peticiones AJAX esde un servicio externo/API/BackEnd.
+
+Servicios REST de prueba:
+https://reqres.in/
+jsonplaceholder: https://jsonplaceholder.typicode.com 
+
+
+--------------
+PROMESAS: Una Promise (promesa) es un objeto que representa la terminación o el fracaso de una operación asíncrona,
+al cuál se adjuntan funciones callback, en lugar de pasar callbacks a una función.
+
+Menos líneas y mucha menos indentación en el código.
+Las promesas se crean usando un constructor llamado Promise y pasándole una función que recibe dos parámetros, 
+resolve y reject, que nos permiten indicarle a esta que se resolvió o se rechazó.
+Son muy útiles para evitar el callBackHell (Un callBack dentro de otro)ç
+Pos eso aconsejan, encadenar promesas.EJs:
+
+1. Ejemplo:
+const miPrimeraPromise = new Promise((resolve, reject) => {
+  // Llamamos a resolve(...) cuando lo que estabamos haciendo finaliza con éxito, y reject(...) cuando falla.
+  // En este ejemplo, usamos setTimeout(...) para simular código asíncrono. 
+  // En la vida real, probablemente uses algo como XHR o una API HTML5.
+  setTimeout(function(){
+    resolve("¡Éxito!"); // ¡Todo salió bien!
+  }, 250);
+});
+
+
+otra:
+const promise = new Promise((resolve, reject) => {
+	const number = Math.floor(Math.random() * 10);
+
+	setTimeout(
+		() => number > 5
+			? resolve(number)
+			: reject(new Error('Menor a 5')),
+		1000
+	);
+});
+
+promise
+	.then(number => console.log(number))
+	.catch(error => console.error(error));
+
+2. Ejemplo:
+const promesa = crearArchivoAudioAsync(audioConfig);
+promesa.then(exitoCallback, falloCallback);
+
+
+.Como los métodos Promise.prototype.then() y Promise.prototype.catch() retornan promesa

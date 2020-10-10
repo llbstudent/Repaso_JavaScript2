@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio DOM, Eventos y Funciones</title>
+    <script type="text/javascript" src="ejercicioDOM.js"></script>
+    <!--CSS-->
+    <style>
+        .box {
+            width: 200px;
+            height: 250px;
+            float: left;
+            margin: 20px;
+        }
+        
+        .dashed {
+            border: 2px dashed greenyellow;
+            padding: 3px;
+        }
+    </style>
+    <!--FIN CSS-->
+</head>
+
+<body>
+    <!--
+        Descrip:
+        1.Formulario. Evento submit
+        2.Mostrar esos datos por pantalla
+        3.Tener un botón que nos muestre los datos actuales
+        4.Validación de éste
+    -->
+    <h1>Ejercicio</h1>
+    <div class="box">
+        <form action="#" method="POST" id="formulario" onsubmit="return false;">
+            <h5>Mi pequeño formulario</h5>
+            <p>
+                <label for="nombre">Nombre:</label><br/>
+                <input type="text" name="nombre" id="nombre">
+            </p>
+            <p>
+                <label for="apellidos">Apellidos:</label><br/>
+                <input type="text" name="apellidos" id="apellidos">
+            </p>
+            <p>
+                <label for="edad">Edad:</label><br/>
+                <input type="number" name="edad" id="edad">
+            </p>
+            <p>
+                <input type="submit" value="ENVÍAR" id="submit">
+                <input type="reset" value="LIMPIAR CAMPOS" id="reset">
+            </p>
+        </form>
+    </div>
+
+    <div class="box dashed" id="datosUsuario1">
+        <h5>Información del usuario</h5>
+        <hr/>
+
+
+    </div>
+
+    <div class="box dashed" id="datosUsuario2">
+        <h5>Información del usuario</h5>
+        <hr/>
+        <span id="errorUsuario"></span>
+        <p id="pNombre">
+            Nombre: <span></span>
+        </p>
+        <p id="pApellidos">
+            Apellidos: <span></span>
+        </p>
+        <p id="pEdad">
+            Edad: <span></span>
+        </p>
+    </div>
+
+</body>
+
+</html>

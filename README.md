@@ -1,2 +1,5 @@
-# Repaso_JavaScript2
+# RepasoJavaScript
+_________________
+Repaso de las nociones básicas de JS
+_________________
 Curso complementario

@@ -1,0 +1,116 @@
+//------------------------------------------------
+// POO. Programación Orientada a Objetos
+//-----------------------------------------------
+JavaScript es diferente a los otros lenguajes, ya que los conceptos como herencia, polimorfismo y encapsulamiento
+debido a su naturaleza no existen como tal; por ejemplo el encapsulamiento en java se maneja declarando 
+una propiedad o método como private, qué se le conoce como modificadores de acceso.
+en JS no existen modificadores de acceso, entonces, ¿no hay forma de encapsular en JS? la respuesta es sí, 
+pero no de esa forma, Se usa la nomenclatura del punto.
+
+
+Cuando hablamos de objetos/instancias en JS normalmente nos refereimos a variables
+pero estas son un tipo específico de variables (No son numéricas, ni boolean, ni de tipo String).
+Estas variables albergan propiedades y métodos. 
+Ej: 
+auto.color = "rojo"; 
+auto.arrancar();
+
+EJ DE INSTANCIAS DE USER:
+
+function User(name, lastName) {
+  this.name = name;
+  this.lastName = lastName;
+}
+
+let user1 = new User('Jose', 'Paredes');
+let user2 = new User('Pablo', 'Pinto');
+
+//--------------------
+
+Terminología:
+
+-Clase: Define las características del Objeto.
+-Objeto: Una instancia de una Clase.
+-Propiedad: Una característica del Objeto, como el color.
+-Método: Una capacidad del Objeto, como caminar.
+-Constructor: Es un método llamado en el momento de la creación de instancias.
+-Herencia: Una Clase puede heredar características de otra Clase.
+-Encapsulamiento: Una Clase sólo define las características del Objeto, un Método sólo define cómo se ejecuta el Método.
+-Abstracción: La conjunción de herencia compleja, métodos y propiedades que un objeto debe ser capaz de simular en un modelo de la realidad.
+-Polimorfismo: Diferentes Clases podrían definir el mismo método o propiedad.
+
+
+
+
+//========================
+// EJEMPLO DE CREACIÓN DE OBJETOS
+//========================
+//--------
+//1-Forma
+//--------
+Usamos la estructura de tipo JSON que me permite definir propiedades y métodos de un objeto. EJ:
+
+const libro = {
+	titulo: 'Libro-1',
+	autor: 'Pedro Bermúdez',
+	anno: '2019',
+
+	getResumen: function(){
+		return '${this.titulo} fue escrito por ${this.autor}';
+	}
+}
+
+//Visualizaremos los valores del objeto
+console.log(libro);
+console.log(Object.values(libro));
+console.log(Object.keys(libro));
+
+console.log(Object.keys(libro.getResumen()));
+
+//--------
+//2-Forma
+// A través de constructores/Funciones
+//--------
+
+//Creación de Instancias. Ej:
+//PERSONA:
+function Persona(primerNombre) {
+  this.primerNombre = primerNombre;
+  alert('Una instancia de Persona');
+}
+
+var persona1 = new Persona("Alicia");
+var persona2 = new Persona("Sebastian");
+
+// Muestra el primer nombre de persona1
+alert ('persona1 es ' + persona1.primerNombre); // muestra "persona1 es Alicia"
+alert ('persona2 es ' + persona2.primerNombre); // muestra "persona2 es Sebastian"
+
+//LIBRO:
+function Libro(titulo, anno, autor, resumen){
+	this.titulo = titulo;
+	this.anno = anno;
+	this.autor = autor;
+
+	this.getResumen() = function( resumen ){
+		return resumen;
+	}
+}
+
+//Instancias
+const libro1 = new Libro("Lo que el Viento se llevó", "1945", "SaintGermanin", "ashdajshdjkahsdkjashdashd");
+const libro2 = new Libro("Rebelión en la Granja", "1955", "George Orwell", "ashdajshdjkahsdkjashdashd");
+
+//Imprimir por pantalla/Consola
+console.log(libro1);
+
+//========================
+// NOMENCLATURA DEL PUNTO
+//========================
+//Agregamos/Modificamos las propiedades
+ranault.color = "Azul";
+
+
+//Métodos
+renault.acelerar();
+renault.frenar();

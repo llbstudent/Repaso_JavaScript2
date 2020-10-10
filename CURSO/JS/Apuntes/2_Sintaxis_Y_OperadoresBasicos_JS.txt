@@ -1,0 +1,139 @@
+================================
+2	SINTAXIS BÁSICA
+================================
+
+Contenido:
+
+2.1 VARIABLES Y TIPOS DE DATOS
+	2.1.1 os tipos de datos
+	2.1.2 Convertir datos
+	2.1.3 Detectar el tipo de dato
+
+2.2 OPERADORES BÁSICOS
+2.3 OPERADORES DE INCREMENTO Y DECREMENTO
+2.4 ALERTAS Y VENTANAS DE INGRESO DE DATOS
+
+//----------------------------------------
+// 2.1 VARIABLES Y TIPOS DE DATOS
+//----------------------------------------
+
+En JS, tenemos sentencias, y funciones predefinidas como alert(), document.write(), isNan()...
+Cuando vemos ';' termina una sentencia
+
+
+//Variables, en ellas almacenamos los datos. Ej: var puntuacion;
+//Iniciar variables. 
+var puntuacion = 0;
+
+//Declarar variables en la misma linea: 
+var puntuacion, record, jugador;
+
+//Tipos de datos: Números, Strings y Booleanos.
+var puntuacion = 0, record = 500, nombre = "Juan";
+
+
+//-----------------------
+// 2.1.1 Los tipos de datos:
+//-----------------------
+Los tipos de datos básicos de las variables son: 
+-Números enteros
+-Strings/cadenas de texto
+-Número decimales/de coma flotante
+-Booleans (false/true  0/1)
+-Arrays
+-Objetos
+
+ej:
+var numero = 44;
+var cadenaTxt = "Hola qué tal!";
+var estaCasado = true;
+var estaCasado = 1;
+
+//---------------------
+2.1.2 Convertir datos
+//---------------------
+-De 'String' a 'número': Podemos usar la función 'Number()' y 'parseInt()'
+	-Number(): Nos transforma a número, esto incluyr los de coma flotante
+	-parseInt(): Nos transforma a número entero.
+	var numeroFalso = "30";
+	console.log("La edad de JesuCristo es " + (Number(numeroFalso) + 3));
+
+-Convertir 'cualquier tipo' a 'String': 
+	var numero = 34;
+	String(numero);
+
+
+//---------------------
+2.1.3 Detectar el tipo de dato
+//---------------------
+Usamos la función typeof();
+-Podemos usarla de 2 maneras:
+	-typeof num;
+	-typeof(num);
+
+
+//-------------------------
+// 2.2 OPERADORES BÁSICOS
+//-------------------------
++ : Suma
+- : Resta
+* : Multiplicación
+/ : División
+
+<script>
+	var precioUnidad, cantidad, total;
+	precioUnidad = 100;
+	cantidad = 20;
+
+	total = precioUnidad * cantidad;
+
+	alert("El total es " + total + "€");
+</script>
+
+// Mirar ejemplo en 'eJ2_prompt'
+
+
+//-------------------------------------------
+// 2.3 OPERADORES DE INCREMENTO Y DECREMENTO
+//-------------------------------------------
++=  - Incremento
+-=  - Decremento
+*=  - Multiplica por 'x' el valor de una variable
+/=  - Divide en 'x' el valor de una variable
+++  - Incrementa en 1
+--  - Decrementa en 1
+
+
+//----------------------------------------------
+// 2.4 ALERTAS Y VENTANAS DE INGRESO DE DATOS
+//----------------------------------------------
+//-----------------------
+2.4.1 ALERTAS/VENTANAS EMERGENTES (ALERT)
+//-----------------------
+Utilizamos la función 'alert("Ejemplo de mensaje")'
+Nos aparecera una venatana emergente en el navegador.
+
+//-----------------------
+2.4.2 VENTANA DE CONFIRMACIÓN
+//-----------------------
+Utilizamos l afunción 'confirm()'. Apareceran las opciones 'aceptar' y 'cancelar'.
+Para ello, tendremos que guardar el resultado de nuestra respuesta en una variable. EJ: 
+
+let miResultado = confirm("¿Está seguro de querer continuar?");
+//console.log(miResultado);
+
+if(miResultado == true){
+	//. . .
+}else{
+	. . .
+}
+
+//-----------------------
+2.4.3 POP UP/ VENTANAS DE INGRESO DE DATOS
+//-----------------------
+Para ello, utilizamos la función 'prompt()'
+Se usa para pedir datos al usuario, es decir: Prompt es para la entrada de datos (alert sería de salida de datos)
+Prompt: Permite introducir datos que estan fuera del programa (a partir del html) al interior. EJ:
+
+//Puede tener un segundo parámetro que sería el valor por defecto ('18').
+let edad = prompt("¿Qué edad tienes?", 18);

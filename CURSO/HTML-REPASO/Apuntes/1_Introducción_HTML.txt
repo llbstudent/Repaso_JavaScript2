@@ -1,0 +1,88 @@
+// HTML: HyperText Markup Languaje
+
+Este lenguaje es un lenguaje de etiquetado/etiquetas, que nos da la estructura básica de una página web.
+
+No es un lenguaje de programación ya que no tiene 'lógica' ni estructuras de control, ni bucles.
+
+//----------------------------
+// Estructura básica de un documento html:
+<!--Establece la versión de 'html' que estamos utilizando-->
+<!DOCTYPE html>
+<!--Aquí va todo el contenido de la página-->
+<html lang="en">
+
+
+<!--Contenido no visible/Metadatos-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--Donde va todo el contenido/etiquetas y componenetes de la página. Lo que se muestra-->
+<body>
+
+</body>
+
+</html>
+//----------------------------
+
+LAS ETIQUETAS
+//----------------------------
+Son los elementos en los que se compone un documento 'html', las hay de varios tipos:
+De texto:
+<h1></h1>
+<p></p>
+<blockcuote></blockcuote>
+<span></span>
+<em></em>
+<strong></strong>
+<br/>
+<hr/>
+
+De estructura:
+<head></head>
+<body></body>
+<div></div>
+
+.TABLAS:
+Nos van a servir mucho para dibujar contenido en la pantalla.
+Sólo se usa para organizar la información/ Al igual que las Listas
+Hoy en día no nos sirven para maquetar sino que ha sido sustituido por el modelo de cajas:
+
+<!--Identificar la tabla-->
+<table border="1">
+    <!--Encabezado-->
+    <th></th>
+    <!--Filas-->
+    <tr></tr>
+    <!--Columnas-->
+    <td colspan="2">Nombre</td>
+    <td>Apellidos</td>
+    <td>País</td>
+</table>
+
+
+-Listas:
+.Ordenada:
+<ol>
+    <li>Peras</li>
+    <li>Manzanas</li>
+    <li>Plátanos</li>
+    <li>Cocos</li>
+</ol>
+
+.Desordenadas:
+<il>
+    <li>Peras</li>
+    <li>Manzanas</li>
+    <li>Plátanos</li>
+    <li>Cocos</li>
+</il>
+
+Para multimedia:
+<img src="img/img_Perro.jpg" alrt="imagen de un perro" title="Foto de un perro" width="255px" height="150px"/>
+
+Estas etiquetas tienen atributos. ej:
+<img src="img/img1.jpg">
+<link href="css/style1.css">

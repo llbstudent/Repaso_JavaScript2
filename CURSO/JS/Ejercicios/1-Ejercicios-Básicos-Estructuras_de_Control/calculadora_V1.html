@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <!--Código JS-->
+    <script>
+        let num1 = parseFloat(prompt("Introduce el primer número"));
+        let num2 = parseFloat(prompt("Introduce el segundo número"));
+
+        // typeof(num1) == 'number' && typeof(num2) == 'number'
+        if (isNaN(num1) && isNaN(num2)) {
+            let res;
+            let operation = prompt("¿Qué operación desea realizar (suma/resta/multiplicación/division)?").toLowerCase();
+
+            if (operation == "suma") {
+                res = num1 + num2;
+                alert(res);
+
+            } else if (operation == "resta") {
+                res = num1 - num2;
+                alert(res);
+
+            } else if (operation == "multiplicación" || operation == "multiplicacion") {
+                res = num1 * num2;
+                alert(res);
+
+            } else if (operation == "división" || operation == "division") {
+                res = num1 / num2;
+                alert(res);
+
+            } else {
+                alert("ERROR: Introduzca bien la operación");
+            }
+        } else {
+            if (typeof(num1) == 'string' && typeof(num2) == 'string') {
+                alert("ERROR: Introduzca valores numéricos");
+            } else {
+                alert("ERROR: desconocido");
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!--
+        NaN: Not a Number
+
+    -->
+</body>
+
+</html>

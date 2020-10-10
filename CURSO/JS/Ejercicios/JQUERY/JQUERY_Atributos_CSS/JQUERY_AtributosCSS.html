@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Documento sin título</title>
+    <!--CSS-->
+    <style>
+        .linkdestacacursos {
+            color: #f4c;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+        
+        a {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        table {
+            text-align: center;
+            border: none;
+        }
+        
+        td {
+            border: none;
+        }
+        
+        #contieneEnlaces {
+            position: absolute;
+            left: 31px;
+            top: 65px;
+            width: 400px;
+            height: 649px;
+            z-index: 1;
+            padding-top: 100px;
+        }
+    </style>
+
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //Se hará en cuanto cargue nuestra página-WEB
+        $(document).ready(function() {
+            //Apuntamos a todos los enlaces externos
+            //$("a[href^='http://']").addClass("linkdestacacursos");
+            //$("a[href^='https://']").addClass("linkdestacacursos");
+
+            //Aregar Evento
+            document.getElementById("cursos").addEventListener("click", resaltaCursos, false);
+            document.getElementById("informacion").addEventListener("click", resaltaEjemplos, false);
+            document.getElementById("cursos2").addEventListener("click", resaltaCursos2, false);
+            document.getElementById("informacion2").addEventListener("click", resaltaEjemplos2, false);
+
+
+        });
+
+        //Métodos
+
+        function resaltaCursos() {
+            $(".ejemplos").removeClass("linkdestacacursos");
+            $(".cursos").addClass("linkdestacacursos");
+        }
+
+        function resaltaEjemplos() {
+            $(".cursos").removeClass("linkdestacacursos");
+            $(".ejemplos").addClass("linkdestacacursos");
+        }
+
+        function resaltaCursos2() {
+            $(".cursos2").toggleClass("linkdestacacursos");
+        }
+
+        function resaltaEjemplos2() {
+            $(".informacion2").toggleClass("linkdestacacursos");
+        }
+    </script>
+</head>
+
+<!--Contenido-->
+
+<body>
+
+    <div id="contieneEnlaces">
+
+        <a href="http://www.pildorasinformaticas.com" target="_blank" class="cursos">Píldoras informáticas</a><br>
+
+        <a href="http://www.google.com" target="_blank" class="ejemplos">Google</a><br>
+
+        <a href="https://www.youtube.com/user/pildorasinformaticas" target="_blank" class="cursos">Píldoras informáticas YouTube</a><br>
+
+        <a href="remover_reemplazar.html" target="_blank">Remover y reemplazar</a><br>
+
+        <a href="https://news.google.es/" target="_blank" class="ejemplos">Noticias google</a><br>
+
+        <a href="calculadora_arcaica.html" target="_blank">Calculadora</a>
+    </div>
+
+    <table width="100%" border="1">
+        <tr>
+            <td>
+                Cursos destacados&nbsp;&nbsp;<input type="button" value="Cursos" id="cursos">
+                <br/> Cursos 2<input type="checkbox" value="Cursos" id="cursos2">
+            </td>
+            <td>
+                Información adicional&nbsp;&nbsp;<input type="button" value="Información" id="informacion">
+                <br /> Información 2<input type="checkbox" value="Información" id="informacion2">
+            </td>
+        </tr>
+
+
+
+
+</body>
+
+</html>

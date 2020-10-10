@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY:-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Agregando contenido</title>
+
+    <script>
+        $(document).ready(function() {
+            alert($("#errores").html());
+            alert($("#errores h2").html());
+
+            //HTML: Manipula etiquetas
+            //Cambiar el contenido del 'div'
+            //$("#errores").html("<p>Hay errores</p>");
+
+            //Añade al principio dentro del contenedor/etiqueta
+            $("#errores").prepend("<p>----------</p>");
+
+            //Añade al final dentro del contenedor/etiqueta:
+            $("#errores").append("<p>Hay errores</p>");
+
+            //Añade fuera, antes del contenedor/etiqueta:
+            $("#errores").before("<p>======================</p>");
+
+            //Añade al final fuera del contenedor/etiqueta:
+            $("#errores").after("<p>^----------------------^</p>");
+
+            //TEXT:Manipula texto
+            $("#errores h2").text("Hay muchos e incontables errores en el formulario");
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="errores" style="background-color: #ffc;">
+            <h2>ERRORES</h2>
+        </div>
+    </div>
+
+    <div id="formulario">
+        <form action="" method="GET">
+            <input type="text" id="usuario"> <br/>
+            <input type="text" id="nombre"> <br/>
+            <input type="text" id="apellido"> <br/>
+
+            <input type="button" value="DALE" onclick="validar()">
+        </form>
+    </div>
+
+    <!--VALIDACION DEL FORMULARIO-->
+    <script>
+        function validar() {
+            var nombreUsuario = document.getElementById("usuario").value;
+
+            if (nombreUsuario == "") {
+                $("#usuario").after("Rellena este campo, por favor")
+            }
+        }
+    </script>
+</body>
+
+</html>

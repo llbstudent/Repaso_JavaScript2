@@ -1,0 +1,23 @@
+==============================
+LOCAL STORAGE
+==============================
+
+Es una manera de almacenar información dentro del navegador y que esta persista 
+mientras que vamos navegando en la página
+Es cómo una memoria/Especie de sesión que permanece.
+
+Se usa muchísimo en aplicaciones desarrolladas con JS (Angular, Stack)
+
+A veces el navegador puede ser incompatible con esta tecnología (Sobretodo si es un navegador antiguo).
+Para ello antes veríficamos mediante una función si es compatible o no con el 'local Storage'
+Así:
+
+if(typeof(Storage) !== 'undefined'){
+    console.log("LocalStorage disponible);
+}else{
+    console.log("Incompatible con LocalStorage);
+}
+
+
+// en wondiws Chrome
+En la parte de 'Application' tenemos la opción de 'ClearStorage'

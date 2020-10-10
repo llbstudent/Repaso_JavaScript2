@@ -1,0 +1,47 @@
+//------------------------------------------------
+        EL DOM Y EL BOM
+//------------------------------------------------
+Introducción:
+
+
+//----------------------------------
+        EL DOM
+//----------------------------------
+// DOM. Document Object Model / Modelo de Objetos del Documento
+
+*document.get... 
+En código 'document se refiere a la página-web'/html en sí
+
+El DOM es básicamente el árbol de etiquetas/elementos que tenemos dentro de una página web.EJ: body, p...
+//---------------------------------
+
+Tenemos que conocer/entender html,css y js para para saber como funciona el DOM
+Es un modelo de objetos de la página que el ordenador memoriza.
+
+//Entendiendo el DOM:
+Esta jerarquía la memoriza el ordenador/navegador, tanto las etiquetas como los atributos de estas:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+//-----------------
+// DOM Y JQUERY
+//-----------------
+
+//----------------------------------
+        EL BOM
+//----------------------------------
+Browser Object Model
+nos permite manipular el navegador web y la ventana para obtener datos con JS
+
+Son los elementos del navegador WEB

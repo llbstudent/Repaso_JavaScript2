@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar números impares entre 2 números</title>
+</head>
+
+<body>
+    <script>
+        //Mostrar sólo los número impares entre 2 números
+        do {
+            var num1 = Number(prompt("Introduce el primer número:"));
+            var num2 = Number(prompt("Introduce el segundo número:"));
+
+        } while (isNaN(num1) || isNaN(num2));
+
+        //Dependiento del número
+        if (num1 < num2) {
+            document.write("<h2>Número impares del '" + num1 + "' hasta '" + num2 + "'</h2>");
+            for (let i = num1; i <= num2; i++) {
+                if (i % 2 != 0) {
+                    document.write(i + " es impar <br/>")
+                }
+            }
+
+        } else {
+            document.write("<h2>Número impares del '" + num2 + "' hasta '" + num1 + "'</h2>");
+            for (let i = num2; i <= num1; i++) {
+                if (i % 2 != 0) {
+                    document.write(i + " es impar <br/>")
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

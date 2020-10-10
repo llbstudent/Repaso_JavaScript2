@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles</title>
+</head>
+
+<body>
+    <!--Estilo/CSS-->
+    <style>
+        #contenedor {
+            width: 25%;
+            background-color: #FFc;
+            margin: auto;
+            padding: 15px;
+        }
+    </style>
+
+    <!--Comportamiento/Control/JS-->
+    <script>
+        var nombre, edad, poblacion;
+
+        //Nombre
+        nombre = prompt("Introduce el nombre:");
+        //Not a Number
+        while (!isNaN(nombre)) {
+            nombre = prompt("Introduce un nombre válido:");
+        }
+
+        //Edad
+        edad = prompt("Introduce la edad:");
+        while (isNaN(edad) || (edad <= 18 && edad >= 110)) {
+            edad = prompt("Introduce una edad válida:");
+        }
+
+        //Poblacion
+        poblacion = prompt("Introduce la poblacion:");
+        while (!isNaN(poblacion)) {
+            poblacion = prompt("Introduce una población válida:");
+        }
+    </script>
+
+    <!--Formato/HTML-->
+    <div id="contenedor">
+        <h3>Bucle While</h3>
+        <hr/>
+        <p>Nombre:
+            <script>
+                document.write(nombre);
+            </script>
+        </p>
+        <p>Edad:
+            <script>
+                document.write(edad);
+            </script>
+        </p>
+        <p>Población
+            <script>
+                document.write(poblacion);
+            </script>
+        </p>
+
+    </div>
+
+    <!--Ejemplo 2-->
+
+    <!--Ejemplo 1:
+     <script>
+         let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre",
+             "Noviembre", "Diciembre"
+         ];
+         let contador = 0;
+
+         while (contador < meses.length) {
+             document.write(meses[contador] + "<br/>");
+             contador++;
+         }
+     </script>
+    -->
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora básica</title>
+</head>
+
+<body>
+    <script>
+        //Métodos
+
+        function suma(num1, num2) {
+            alert("La suma es " + (num1 + num2));
+        }
+
+        function resta(num1, num2) {
+            alert("La resta es " + (num1 - num2));
+        }
+
+        function multi(num1, num2) {
+            alert("La multiplicación es " + (num1 * num2));
+        }
+
+        function div(num1, num2) {
+            alert("La división es " + (num1 / num2));
+        }
+
+        //Variables
+        var operation = prompt("Qué operación deseas realizar");
+        var numero1 = parseFloat(prompt("Introduce el primer número"));
+        var numero2 = parseFloat(prompt("Introduce el segundo número"));
+
+
+        //Condicionales
+        if (operation === "suma") {
+            suma(numero1, numero2);
+
+        } else if (operation === "resta") {
+            resta(numero1, numero2);
+
+        } else if (operation === "multiplicar") {
+            multi(numero1, numero2);
+
+        } else if (operation === "dividir") {
+            div(numero1, numero2);
+
+        } else {
+            alert("Operación inexistente/No contemplada");
+        }
+    </script>
+</body>
+
+</html>

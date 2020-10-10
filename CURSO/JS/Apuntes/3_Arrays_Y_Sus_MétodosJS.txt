@@ -1,0 +1,228 @@
+//---------------------------------
+    ARRAYS / VECTORES Y MATRICES
+//---------------------------------
+0- Introducción
+1- Acceder a un índice/elemento del array
+2- Saber la longitud/Número de elementos del Array
+3- Añadir elementos al Array
+4- Eliminar elementos del Array
+5- Concatenación y usos
+6- Recorrer Array
+7- Convertir String en Array
+8- Ordenar Arrays
+9- Búsquedas en Arrays
+10-Ejercicios Arrays
+
+
+---------------------------------
+0- Introducción
+---------------------------------
+
+Existen varias formas de crear un Array y son las siguientes:
+
+1- Declaración:
+  var articulos = ["peras", "arroz", "Mermelada", "pan bimbo"];
+  var persona = ["Julio", 22, true];
+
+2- Declaración: 
+  var colores =  new Array();
+
+3- Declaración con un número de posiciones: 
+  var colores = new Array(10);
+
+4- var colores = new Array("rojo", "azul", "verde"); 
+
+
+//========================
+//Propiedades y métodos
+//========================
+//Para más información de métodos útiles: https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+---------------------------------
+1- Acceder a un índice/elemento del array:
+---------------------------------
+articulos[2];
+
+
+---------------------------------
+2- Saber la longitud/Número de elementos del Array:
+---------------------------------
+Método: length();
+articulos.length();
+
+---------------------------------
+3- Añadir elementos al Array
+---------------------------------
+
+3.1 Al principio:
+----------------
+Método: unshift();
+
+  articulos.push("atún");
+  articulos.push("sal", "hamburguesas");
+  articulos = ["sal", "hamburguesas", "atún", "peras", "arroz", "Mermelada", "pan bimbo"];
+
+3.1 Al final:
+----------------
+Método: push();
+
+  articulos.push("atún");
+  articulos.push("sal", "hamburguesas");
+  articulos = ["peras", "arroz", "Mermelada", "pan bimbo", "atún", "sal", "hamburguesas"];
+
+
+---------------------------------
+4- Eliminar elementos del Array
+---------------------------------
+
+//pop()
+Elimina el último elemento del array
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();
+fruits = ["Banana", "Orange", "Apple"];
+
+//shift()
+Elimina el primer elemento del array
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();
+var fruits = ["Orange", "Apple", "Mango"];
+
+
+--------------------------------
+5- Concatenación y usos
+---------------------------------
+//concat()
+//Se usa para unir dos o más arrays
+var nombre1 = ["Cecilie", "Lone"];
+var nombre2 = ["Emil", "Tobias", "Linus"];
+var nombres = nombre1.concat(nombre2);
+
+
+//fill()
+Rellena el contenido del array de un mismo elemento
+var frutas = ["Banana", "Orange", "Apple", "Mango"];
+frutas.fill("Kiwi");
+frutas = ["Kiwi", "Kiwi", "Kiwi", "Kiwi"];
+
+
+//entries()
+Lo convierte en un array iterador
+
+var frutasArray = ["Banana", "Orange", "Apple", "Mango"];
+var frutas = fruits.entries();
+
+
+
+---------------------------------
+5- Recorrer Array
+---------------------------------
+5.1- Con for:
+
+for:
+  for(var i=0; i < frutas.length; i++){
+    document.write("<li>" + frutas[i] + "</li>");
+  }
+
+  for (fruta of frutas) {
+  document.getElementById("demo").innerHTML += x;
+  }
+  /*
+  0,Banana
+  1,Orange
+  2,Apple
+  3,Mango
+  */
+
+
+foreach:
+  frutas.forEach((fruta, indice)=>{
+    document.write("<li>" + indice+ "-" + fruta + "</li>");
+  });
+
+
+for in:
+  for(let indice in peliculas){
+    document.write(peliculas[indice]);
+  }
+
+
+---------------------------------
+7- Convertir String en Array
+---------------------------------
+var cadena = "hola, me llamo Laura";
+var array = cadena.split(", ");
+
+console.log(array);
+
+
+---------------------------------
+8- Ordenar Arrays
+---------------------------------
+// método sort(): Nos lo ordenadrá alfabéticamente. EJ:
+ var peliculas = ["Spiderman", "Los Vengadores", "Ant-Man", "Capitán América"];
+ peliculas.sort();
+
+//método reverse(): Orden inverso al establecido
+
+
+---------------------------------
+9- Búsquedas en arrays
+---------------------------------
+9.1- Método find(): Nos devuelve el valor del primer elemento del array si el elemento existe
+
+//Con función:
+EJ1:  
+  var busqueda = peliculas.find(function(pelicula){
+    return pelicula == "Spiderman";
+  });
+
+EJ2:
+    const array1 = [5, 12, 8, 130, 44];
+    const found = array1.find(element => element > 10);
+    console.log(found);
+    // expected output: 12
+
+EJ3:
+    const inventario = [
+        {nombre: 'manzanas', cantidad: 2},
+        {nombre: 'bananas', cantidad: 0},
+        {nombre: 'cerezas', cantidad: 5}
+    ];
+
+    function esCereza(fruta) { 
+        return fruta.nombre === 'cerezas';
+    }
+
+    console.log(inventario.find(esCereza));
+    // { nombre: 'cerezas', cantidad: 5 }
+
+//Con función de flecha:
+  var busqueda = peliculas.find(pelicula => pelicula == "Spiderman");
+
+9.2- Método findIndex(): Nos encuentra o devuelve si el elemento existe su índice/posición
+
+EJ1:
+  const array1 = [5, 12, 8, 130, 44];
+  const isLargeNumber = (element) => element > 13;
+  console.log(array1.findIndex(isLargeNumber));
+  // expected output: 3
+
+
+9.3- Método some(): Suele usarse para números.
+Comprueba si al menos un elemento del array cumple con la condición implementada por la función proporcionada.
+Comprueba si existe ese número u otro mayor/menor a este
+
+EJ1:
+  var busquedaPrecios = precios.some(precio => precio >= 20);
+  var busquedaPrecios = precios.some(precio => precio <= 20);
+  var busquedaPrecios = precios.some(precio => precio == 20);
+
+
+EJ2:
+  const array = [1, 2, 3, 4, 5];
+  const even = (element) => element % 2 === 0;
+  console.log(array.some(even));
+  // expected output: true
+
+
+
